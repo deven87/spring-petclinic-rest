@@ -45,6 +45,8 @@ CREATE TABLE owners (
 );
 CREATE INDEX owners_last_name ON owners (last_name);
 
+ALTER TABLE owners ADD COLUMN phone_number VARCHAR(20);
+
 CREATE TABLE pets (
   id         INTEGER IDENTITY PRIMARY KEY,
   name       VARCHAR(30),

@@ -1,0 +1,9 @@
+{
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": false
+  },
+  "airun.settings": {
+    "workspaceId": "b0946397-0739-4411-b50c-27cb694bb3c7"
+  }
+}

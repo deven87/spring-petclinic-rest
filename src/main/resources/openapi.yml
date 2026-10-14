@@ -2031,6 +2031,15 @@ components:
           maxLength: 20
           pattern: '^[0-9]*$'
           example: '6085551023'
+        phoneNumber:
+          title: Phone number
+          description: Phone number in international or local format (10-20 chars, optional)
+          type: string
+          minLength: 10
+          maxLength: 20
+          pattern: '^[0-9+\-\(\)\s\.]+$'
+          example: '+1-234-567-8900'
+          nullable: true
       required:
         - firstName
         - lastName

@@ -24,3 +24,10 @@ springboot-petclinic-server/
 
 # newman reports
 ./src/test/postman/reports/
+
+# Agentic SDLC secrets - never commit
+.github/.env
+
+# Agentic SDLC - never commit
+.claude/.env
+.claude/settings.local.json
