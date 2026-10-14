@@ -1,0 +1,7 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      { "type": "command", "command": "powershell -File .github/hooks/pr-creation-gate.ps1", "timeout": 120 }
+    ]
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "workflow": {
+    "name": "Agentic SDLC Complete Workflow",
+    "totalSteps": 8,
+    "sequential": true,
+    "skipAllowed": false,
+    "reworkAllowed": true,
+    "commitMessageFormat": "Step [N]: [Description]",
+    "phases": [
+      { "stepNumber": 1, "name": "Requirements", "agent": "requirements", "artifact": "requirements.md" },
+      { "stepNumber": 2, "name": "Architecture", "agent": "architecture", "artifact": "architecture.md" },
+      { "stepNumber": 3, "name": "Design Review", "agent": "design-review", "artifact": "design-review.md" },
+      { "stepNumber": 4, "name": "Implementation Plan", "agent": "impl-plan", "artifact": "impl-plan.md" },
+      { "stepNumber": 5, "name": "Implementation", "agent": "implementation", "artifact": "source code + commits" },
+      { "stepNumber": 6, "name": "Code Review", "agent": "review", "artifact": "code-review.md" },
+      { "stepNumber": 7, "name": "Verification", "agent": "verification", "artifact": "verification-report.md" },
+      { "stepNumber": 8, "name": "PR Creation", "agent": "pr-creation", "artifact": "pr-description.md + Pull Request" }
+    ]
+  }
+}

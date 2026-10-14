@@ -16,6 +16,7 @@
 package org.springframework.samples.petclinic.model;
 
 import org.springframework.core.style.ToStringCreator;
+import org.springframework.samples.petclinic.validation.ValidPhoneNumber;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Digits;
@@ -49,6 +50,14 @@ public class Owner extends Person {
     @Pattern(regexp = "^[0-9]{10}$", message = "Phone number must be exactly 10 digits")
     private String telephone;
 
+    /**
+     * Phone number in international or local format (10-20 chars, optional).
+     * Supports formats like +1-234-567-8900, (555) 123-4567, etc.
+     */
+    @Column(name = "phone_number")
+    @ValidPhoneNumber
+    private String phoneNumber;
+
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "owner", fetch = FetchType.EAGER)
     private Set<Pet> pets;
 
@@ -74,6 +83,24 @@ public class Owner extends Person {
 
     public void setTelephone(String telephone) {
         this.telephone = telephone;
+    }
+
+    /**
+     * Get the phone number in international or local format.
+     * 
+     * @return the phone number, or null if not set
+     */
+    public String getPhoneNumber() {
+        return this.phoneNumber;
+    }
+
+    /**
+     * Set the phone number in international or local format.
+     * 
+     * @param phoneNumber the phone number to set
+     */
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
 
     protected Set<Pet> getPetsInternal() {
